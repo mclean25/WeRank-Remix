@@ -17,7 +17,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const response = new Response();
   const supabase = createSupabaseServerClient(request, response);
 
-  const result = await supabase.from("test").select("id");
+  const result = await supabase.from("posts").select("id");
 
   console.log("Result from supabase: ", result);
 

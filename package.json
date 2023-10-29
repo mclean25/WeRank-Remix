@@ -7,7 +7,8 @@
     "build": "remix build",
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "types": "supabase gen types typescript --local > ./types/database-types.d.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",

@@ -1,4 +1,5 @@
 import { createServerClient, parse, serialize } from "@supabase/ssr";
+import type { Database } from "types/database-types";
 
 export const createSupabaseServerClient = (
   request: Request,
@@ -6,7 +7,7 @@ export const createSupabaseServerClient = (
 ) => {
   const cookies = parse(request.headers.get("Cookie") ?? "");
 
-  const serverClient = createServerClient(
+  const serverClient = createServerClient<Database>(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_ANON_KEY!,
     {
