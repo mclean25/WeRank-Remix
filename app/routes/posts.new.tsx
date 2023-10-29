@@ -27,7 +27,7 @@ export const createPostAction = async ({ request }: ActionFunctionArgs) => {
   // headers must be returned as part of the loader response
   return json(
     {
-      data: title,
+      data: result,
     },
     {
       headers: response.headers,
@@ -47,6 +47,8 @@ export default function NewPost() {
       <p className="text-right">
         <button
           type="submit"
+          name="intent"
+          value="create"
           className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400 disabled:bg-blue-300"
         >
           Create Post

@@ -1,9 +1,9 @@
-import type { SupabaseClient, SupabaseTables } from "~/supabase";
+import type { Db, SupabaseClient } from "~/supabase";
 
 export const getPosts = async (supabaseClient: SupabaseClient) =>
   await supabaseClient.from("posts").select("*");
 
 export const createPost = async (
   supabaseClient: SupabaseClient,
-  inputArgs: SupabaseTables["posts"]["Insert"]
+  inputArgs: Db["posts"]["Insert"]
 ) => await supabaseClient.from("posts").insert([inputArgs]).returns();

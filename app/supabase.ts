@@ -2,7 +2,8 @@ import { createServerClient, parse, serialize } from "@supabase/ssr";
 import type { Database } from "types/database-types";
 
 export type SupabaseClient = ReturnType<typeof createSupabaseServerClient>;
-export type SupabaseTables = Database["public"]["Tables"];
+export type Db = Database["public"]["Tables"];
+export type Post = Db["posts"]["Row"];
 
 export const createSupabaseServerClient = (
   request: Request,
